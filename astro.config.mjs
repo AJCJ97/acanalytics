@@ -7,6 +7,7 @@ export default defineConfig({
     site: 'https://AJCJ97.github.io/', 
 	outDir: './dist',
 	trailingSlash: 'always',
+	output: 'static',
 });
 
 

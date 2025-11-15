@@ -1,12 +1,24 @@
 ---
+// src/components/HeaderLink.astro
 import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'a'>;
 
 const { href, class: className, ...props } = Astro.props;
+
+// 1. Obtiene la ruta actual, limpiando la base URL si existiera.
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
-const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
+
+// 2. Normaliza el 'pathname' (la URL actual) para que siempre termine en '/'
+// Esto lo hace consistente con tu configuración 'trailingSlash: always'
+const normalizedPathname = pathname.endsWith('/') ? pathname : pathname + '/';
+
+// 3. Normaliza el 'href' (el enlace que se pasa) para que siempre termine en '/'
+const normalizedHref = href.endsWith('/') ? href : href + '/';
+
+// 4. Lógica de Activación Corregida: Compara las rutas normalizadas.
+// Esto asegura que /blog y /blog/ sean tratadas como la misma ruta activa.
+const isActive = normalizedHref === normalizedPathname;
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
@@ -17,6 +29,7 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 		display: inline-block;
 		text-decoration: none;
 	}
+	/* Mantén la lógica de estilo para resaltar el enlace activo */
 	a.active {
 		font-weight: bolder;
 		text-decoration: underline;
