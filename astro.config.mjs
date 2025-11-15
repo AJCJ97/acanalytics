@@ -5,6 +5,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
     site: 'https://ajcj97.github.io/acastrolab/', 
+	base: '/acastrolab',
 	outDir: './dist',
 	trailingSlash: 'always',
 	output: 'static',
