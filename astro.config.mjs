@@ -6,7 +6,7 @@ export default defineConfig({
 	base: '/acastrolab',
 	outDir: './dist',
 	trailingSlash: 'always',
-	output: 'static',
+	output: 'static',s
 });
 
 
