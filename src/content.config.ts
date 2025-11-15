@@ -1,19 +1,29 @@
-import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+// src/content/config.ts
 
+import { defineCollection, z } from 'astro:content';
+// ELIMINA ESTA LÍNEA (import { glob } from 'astro/loaders';) - No es necesaria.
+
+// Renombramos la variable a 'projects' para que sea más clara.
 const projects = defineCollection({
-	// Load Markdown and MDX files in the `src/content/projects/` directory.
-	loader: glob({ base: './src/content/projects', pattern: '**/*.{md,mdx}' }),
-	// Type-check frontmatter using a schema
-	schema: ({ image }) =>
-		z.object({
-			title: z.string(),
-			description: z.string(),
-			// Transform string to Date object
-			pubDate: z.coerce.date(),
-			updatedDate: z.coerce.date().optional(),
-			heroImage: image().optional()
-		}),
+    // El tipo debe ser 'content' para Markdown/MDX
+    type: 'content', 
+    
+    // El loader: glob(...) ya no es necesario; Astro encuentra la colección 'projects'
+    // automáticamente si la carpeta se llama 'src/content/projects'.
+    
+    // Type-check frontmatter using a schema
+    schema: ({ image }) =>
+        z.object({
+            title: z.string(),
+            description: z.string(),
+            // Transform string to Date object
+            pubDate: z.coerce.date(),
+            updatedDate: z.coerce.date().optional(),
+            heroImage: image().optional(), // Asegúrate de que haya una coma aquí si agregas algo más.
+        }),
 });
 
-export const collections = { [projects] };
+// Exporta la colección.
+// La clave del objeto debe ser 'projects' y el valor es la variable 'projects'.
+// Usamos la sintaxis de atajo: { projects } es igual a { projects: projects }.
+export const collections = { projects };
