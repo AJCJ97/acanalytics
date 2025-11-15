@@ -16,6 +16,10 @@
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px
 		rgba(var(--gray), 33%);
 }
+html {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
 @font-face {
 	font-family: "Atkinson";
 	src: url("/fonts/atkinson-regular.woff") format("woff");
@@ -29,6 +33,14 @@
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
+}
+header {
+	background-color: var(--color-background);
+	color: var(--color-text);
+}
+.dark-mode header {
+    /* Oscurece la sombra en modo oscuro para que se vea sutil */
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
 }
 body {
 	font-family: "Atkinson", sans-serif;
@@ -50,10 +62,6 @@ main {
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
-	background-color: var(--color-background);
-	color: var(--color-text);
-}
-header {
 	background-color: var(--color-background);
 	color: var(--color-text);
 }
