@@ -6,28 +6,32 @@ type Props = HTMLAttributes<'a'>;
 
 const { href, class: className, ...props } = Astro.props;
 
-// 🔑 CORRECCIÓN CLAVE: Usar Astro.resolve() para incluir la base URL (/acastrolab)
-const finalHref = Astro.resolve(href);
+// 1. Obtener la base URL que contiene /acastrolab
+// Aseguramos que la base URL (ej: /acastrolab) siempre tenga una barra final (/)
+const BASE_PATH = import.meta.env.BASE_URL.endsWith('/')
+    ? import.meta.env.BASE_URL
+    : import.meta.env.BASE_URL + '/';
 
+// 2. Construir el HREF final: BASE_PATH + href (sin la barra inicial duplicada)
+// Ejemplo: /acastrolab/ + blog/ -> /acastrolab/blog/
+const finalHref = BASE_PATH + href.substring(1);
 
-// 1. Obtiene la ruta actual, limpiando la base URL si existiera.
-// Si Astro.url.pathname es /acastrolab/blog/ y BASE_URL es /acastrolab, pathname será /blog/
-const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
+// --- Lógica de Activación (mantenida de tu código anterior) ---
 
-// 2. Normaliza el 'pathname' actual para la comparación.
+// Elimina la base de la URL actual del navegador (ej: /acastrolab/about/ -> /about/)
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, ''); 
+
+// Normaliza las rutas para comparación de "activo"
 const normalizedPathname = pathname.endsWith('/') ? pathname : pathname + '/';
-
-// 3. Normaliza el 'href' (prop) para la comparación.
 const normalizedHref = href.endsWith('/') ? href : href + '/';
 
-// 4. Lógica de Activación: Compara las rutas después de eliminar la base URL.
+// Compara la ruta pasada (ej: /about/) con la ruta actual (ej: /about/)
 const isActive = normalizedHref === normalizedPathname;
 ---
 
 <a href={finalHref} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
-
 <style>
-    /* ... */
+	/* ... (estilos sin cambios) ... */
 </style>
