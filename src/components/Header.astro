@@ -6,7 +6,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
 
 <header>
 	<nav>
-		<HeaderLink href="/"><h2 translate="no">{SITE_TITLE}</h2></HeaderLink>
+		<HeaderLink translate="no" href="/"><h2 translate="no">{SITE_TITLE}</h2></HeaderLink>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/projects/">Projects</HeaderLink>
@@ -32,6 +32,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
 	h2 a,
 	h2 a.active {
 		text-decoration: none;
+		font-weight: bold;
 	}
 	nav {
 		display: flex;
@@ -43,10 +44,11 @@ import DarkModeToggle from './DarkModeToggle.astro';
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		font-weight: bold;
 	}
 	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+		border-bottom-color: var(--accent) !important;
+		font-weight: bold;
 	}
 	.social-links,
 	.social-links a {

@@ -21,17 +21,25 @@ const finalHref = BASE_PATH + href.substring(1);
 // Elimina la base de la URL actual del navegador (ej: /acastrolab/about/ -> /about/)
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, ''); 
 
+const normalizeRoute = (path: string) => {
+    let normalized = path.replace(import.meta.env.BASE_URL, '');
+    normalized = normalized.startsWith('/') ? normalized.substring(1) : normalized;
+    normalized = normalized.endsWith('/') ? normalized.slice(0, -1) : normalized;
+    return normalized === '' ? '/' : `/${normalized}`;
+}
+
 // Normaliza las rutas para comparación de "activo"
-const normalizedPathname = pathname.endsWith('/') ? pathname : pathname + '/';
-const normalizedHref = href.endsWith('/') ? href : href + '/';
+const normalizedPathname = normalizeRoute(Astro.url.pathname);
+const normalizedHref = normalizeRoute(href);
 
 // Compara la ruta pasada (ej: /about/) con la ruta actual (ej: /about/)
 const isActive = normalizedHref === normalizedPathname;
 ---
 
-<a href={finalHref} class:list={[className, { active: isActive }]} {...props}>
+<a href={finalHref} class:list={[className, { active: isActive }]} {...props} translate="no">
 	<slot />
 </a>
+
 <style>
 	/* ... (estilos sin cambios) ... */
 </style>
