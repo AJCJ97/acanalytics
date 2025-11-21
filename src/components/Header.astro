@@ -6,7 +6,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
 
 <header>
 	<nav>
-		<HeaderLink translate="no" href="/"><h2 translate="no">{SITE_TITLE}</h2></HeaderLink>
+		<HeaderLink translate="no" href="/" class="site-title-link"><h2 translate="no">{SITE_TITLE}</h2></HeaderLink>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/projects/">Projects</HeaderLink>
@@ -50,6 +50,9 @@ import DarkModeToggle from './DarkModeToggle.astro';
 	nav a.active {
 		border-bottom-color: var(--accent) !important;
 		font-weight: bold;
+	}
+	.site-title-link {
+		border-bottom: 0 !important; 
 	}
 	.social-links,
 	.social-links a {
