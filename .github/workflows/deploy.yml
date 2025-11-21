@@ -32,16 +32,14 @@ jobs:
       - name: Install dependencies and build
         
         run: |
-          npm install
-          npm run build
-          npm cache clean --force
-          rm -rf package-lock.json
-
-          rm -rf node_modules
-          npm install
-
           rm -rf .astro
           rm -rf dist
+          rm -rf node_modules
+
+          npm cache clean --force
+          npm install
+
+          npm run build
 
       # Este paso sube la carpeta 'dist' para que el siguiente job la use
       - name: Upload artifact
