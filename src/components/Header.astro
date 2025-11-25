@@ -8,16 +8,36 @@ import DarkModeToggle from './DarkModeToggle.astro';
 	<nav>
 		<HeaderLink translate="no" href="/" class="site-title-link"><h2 translate="no">{SITE_TITLE}</h2></HeaderLink>
 		<div class="internal-links">
+			
+		</div>
+		<div class="social-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/projects/">Projects</HeaderLink>
 			<HeaderLink href="/about/">About</HeaderLink>
 			<HeaderLink href="/contact/">Contact</HeaderLink>
-		</div>
-		<div class="social-links">
 			<DarkModeToggle />
 		</div>
+		<!-- Mobile button -->
+  		<button id="menuToggle" class="menu-btn">☰</button>
 	</nav>
+
+	<!-- Mobile menu (oculto por defecto) -->
+	<div id="mobileMenu" class="mobile-menu" style="display:none;">
+		<HeaderLink href="/">Home</HeaderLink>
+		<HeaderLink href="/projects/">Projects</HeaderLink>
+		<HeaderLink href="/about/">About</HeaderLink>
+		<HeaderLink href="/contact/">Contact</HeaderLink>
+		<DarkModeToggle />
+	</div>
 </header>
+<script>
+  const btn = document.getElementById("menuToggle");
+  const menu = document.getElementById("mobileMenu");
+
+  btn.addEventListener("click", () => {
+    menu.style.display = menu.style.display === "none" ? "flex" : "none";
+  });
+</script>
 <style>
 	header {
 		margin: 0;
@@ -65,7 +85,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
 		}
 
 		nav {
-			width: 100%; 
+			width: 90%; 
 			align-items: flex-start; 
 		}
 		
@@ -80,10 +100,12 @@ import DarkModeToggle from './DarkModeToggle.astro';
 			font-size: 0.7em;
 			justify-content: center;
 			line-height: 3.2em;
+			vertical-align: bottom;
 		}
 		
 		.social-links {
 			margin-left: 0.5em;
+			display:none;
 		}
 	}
 </style>
