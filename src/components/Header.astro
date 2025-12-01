@@ -6,7 +6,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
 
 <header>
 	<nav>
-		<HeaderLink translate="no" href="/" class="site-title-link logo-img"><img src="/src/assets/logo.png" alt=""/></HeaderLink>
+		<HeaderLink translate="no" href="/" class="site-title-link"><img class="logo-img" src="/src/assets/logo.png" alt=""/></HeaderLink>
 		
 		<div class="social-links">
 			<HeaderLink href="/">Home</HeaderLink>
@@ -111,7 +111,8 @@ btn.addEventListener("click", () => {
 	@media (max-width: 720px) {
 		.logo-img {
         display: block !important; /* Forzar que se muestre, anulando cualquier posible display: none */
-        height: 40px; /* Reducir un poco el tamaño para móvil si es necesario */
+        width:auto;
+		height: 40px; /* Reducir un poco el tamaño para móvil si es necesario */
     }
 		/* 1. VISIBILIDAD */
 		.social-links {
