@@ -2,11 +2,12 @@
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 import DarkModeToggle from './DarkModeToggle.astro';
+import logo from '../assets/logo.png';
 ---
 
 <header>
 	<nav>
-		<HeaderLink translate="no" href="/" class="site-title-link"><img class="logo-img" src="/src/assets/logo.png" alt=""/></HeaderLink>
+		<HeaderLink translate="no" href="/" class="site-title-link"><img class="logo-img" src={logo.src} alt=""/></HeaderLink>
 		
 		<div class="social-links">
 			<HeaderLink href="/">Home</HeaderLink>
