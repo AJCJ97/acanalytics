@@ -109,6 +109,10 @@ btn.addEventListener("click", () => {
 	}
 	
 	@media (max-width: 720px) {
+		.logo-img {
+			display: block !important; /* Forzar que se muestre, anulando cualquier posible display: none */
+			height: 40px; /* Reducir un poco el tamaño para móvil si es necesario */
+		}
 		/* 1. VISIBILIDAD */
 		.social-links {
 			display: none; /* Oculta los tabs de escritorio en móvil */
