@@ -107,19 +107,12 @@ btn.addEventListener("click", () => {
 	.site-title-link {
 		border-bottom: 0 !important;
 	}
-<<<<<<< HEAD
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (min-width: 340px ) and (max-width: 720px) {
-		.logo-img {
-			display: block !important; /* Forzar que se muestre, anulando cualquier posible display: none */
-			height: 40px; /* Reducir un poco el tamaño para móvil si es necesario */
-		}
-=======
 	
 	@media (max-width: 720px) {
+		.logo-img {
+        display: block !important; /* Forzar que se muestre, anulando cualquier posible display: none */
+        height: 40px; /* Reducir un poco el tamaño para móvil si es necesario */
+    }
 		/* 1. VISIBILIDAD */
 		.social-links {
 			display: none; /* Oculta los tabs de escritorio en móvil */
@@ -134,8 +127,8 @@ btn.addEventListener("click", () => {
 		}
 		
 		/* 2. AJUSTES DE DISEÑO PARA MÓVIL */
->>>>>>> ced609f7d6515b4a3c6f5f3ac492ba1aa9f31e29
 		header {
+			padding: 0 0.5em;
 			box-shadow: none;
 			width: 100%;
 		}
