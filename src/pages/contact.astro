@@ -3,24 +3,36 @@ import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import Layout from '../layouts/BlogPost.astro';
 ---
 
-<Layout title="Contact" description="Lorem ipsum dolor sit amet">
+<Layout title="Contact Me" description="Lorem ipsum dolor sit amet">
     <section class="contact-section" align="center">
-        <div class="contact-card-container"> 
+        <div style="text-align:center; margin-top: 40px;">
+  
+  <div style="display: flex; justify-content: center; gap: 22px; margin-top: 16px;">
 
-            <div class="info-item-card">
-                <span class="icon-card"> 
-                </span>
-                <div class="text-group-card">
-                    <a href="mailto:ajcastro9726@gmail.com">Email</a>
-                </div>
-            </div>
-            <div class="info-item-card">
-                <span class="icon-card"> 
-                </span>
-                <div class="text-group-card">
-                    <a href="https://www.linkedin.com/in/alberto-jos%C3%A9-castro-jim%C3%A9nez-80718013a/">LinkedIn</a>
-                </div>
-            </div>
-        </div>
+    <a href="mailto:ajcastro9726@gmail.com">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="#d44638">
+            <path d="M12 13.065l-11.99-9.065h23.98z"/>
+            <path d="M12 15.065l-12-9.065v16h24v-16l-12 9.065z" fill="#d44638"/>
+        </svg>
+    </a>
+
+    <a href="https://www.linkedin.com/in/tu-link" target="_blank">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="#0a66c2">
+        <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 
+        2.24 5 5 5h14c2.76 0 5-2.24 
+        5-5v-14c0-2.76-2.24-5-5-5zm-11 
+        19h-3v-10h3v10zm-1.5-11.268c-.966 
+        0-1.75-.79-1.75-1.764s.784-1.764 
+        1.75-1.764 1.75.79 
+        1.75 1.764-.784 1.764-1.75 
+        1.764zm13.5 11.268h-3v-5.604c0-3.355-4-3.099-4 
+        0v5.604h-3v-10h3v1.528c1.396-2.586 
+        7-2.777 7 2.476v5.996z"/>
+        </svg>
+    </a>
+
+  </div>
+
+</div>
     </section>
 </Layout>
