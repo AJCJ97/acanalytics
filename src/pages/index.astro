@@ -3,6 +3,9 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import AboutHeroImage from '../assets/about.jpg';
+import { Image } from 'astro:assets';
+
 ---
 
 <!doctype html>
@@ -20,20 +23,18 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 		<Header />
 		<main>
 			<section class="hero">
-				<h1>Hi, I'm Alberto — Data Analyst</h1>
 				<p>
-					I’m a Data Analyst with a Software Engineering background and 5+ years of experience working with 
+					Hello! My name is Alberto, I'm a Data Analyst with a Software Engineering background and 5+ years of experience working with 
 					cross-functional teams across the U.S. and the U.K. I specialize in SQL, Python, Power BI, and Excel, 
 					transforming raw information into insights that support business decisions.
 				</p>
-
 				<div class="cta-buttons">
-					<a href="about/" class="primary-btn">About Me</a>
+					<a href="#about" class="primary-btn">About Me</a>
 					<a href="Data_Analyst_Alberto_Castro_Jimenez.pdf" class="secondary-btn">Download CV</a>
 				</div>
 			</section>
 
-			<section class="projects-section">
+			<section id="projects" class="projects-section">
 				<h2>Featured Projects</h2>
 
 				<div class="project-grid">
@@ -51,11 +52,28 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 				</div>
 			</section>
 
-			<section class="projects-section">
-				<h2>Featured Projects</h2>
+			<section id="about" class="projects-section">
+				<h2>About Me</h2>
+				<div class="hero-image-container">
+					<Image alt="" width={300} height={300} loading="eager" src={AboutHeroImage} />
+				</div>
+				<p>
+					My career began in CRM and email development, where I worked daily with PMs, designers, and engineering teams to solve technical problems, structure projects, and deliver high-impact, data-driven components used by thousands of users.
+					This experience strengthened my analytical thinking, attention to detail, problem-solving mindset, and my ability to work in global, fast-paced environments. <br><br>
+					Transitioning into data has been a natural evolution for me. Today, I work with SQL, Python, Power BI, Excel and build projects focused on data cleaning, visualization, and insights. I enjoy transforming raw information into something clear, usable, and valuable.
+					I'm motivated by learning, building, and contributing to teams that rely on data to drive decisions.<br><br>
+					If you're looking for someone analytical, curious, structured, and committed—I'd love to connect.
+				</p>
+			</section>
 
+			<section id="contact" class="hero">
+				<h2>Let's talk</h2>
+				<div class="contact-me-links">
+					<a href="mailto:ajcastro9726@gmail.com" class="primary-btn">Email</a>
+					<a href="https://www.linkedin.com/in/alberto-jos%C3%A9-castro-jim%C3%A9nez-80718013a/" class="primary-btn">LinkedIn</a>
 				</div>
 			</section>
+
 		</main>
 		<Footer />
 	</body>

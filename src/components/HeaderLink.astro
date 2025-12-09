@@ -1,45 +1,36 @@
 ---
-// src/components/HeaderLink.astro
 import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'a'>;
 
 const { href, class: className, ...props } = Astro.props;
 
-// 1. Obtener la base URL que contiene /acastrolab
-// Aseguramos que la base URL (ej: /acastrolab) siempre tenga una barra final (/)
+// 1. Define la URL base para el despliegue (ej: /acastrolab/)
 const BASE_PATH = import.meta.env.BASE_URL.endsWith('/')
-    ? import.meta.env.BASE_URL
-    : import.meta.env.BASE_URL + '/';
+    ? import.meta.env.BASE_URL
+    : import.meta.env.BASE_URL + '/';
 
-// 2. Construir el HREF final: BASE_PATH + href (sin la barra inicial duplicada)
-// Ejemplo: /acastrolab/ + blog/ -> /acastrolab/blog/
-const finalHref = BASE_PATH + href.substring(1);
+// 2. Determina el HREF final (para enlaces internos, externos o anclajes)
+let finalHref: string;
 
-// --- Lógica de Activación (mantenida de tu código anterior) ---
-
-// Elimina la base de la URL actual del navegador (ej: /acastrolab/about/ -> /about/)
-const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, ''); 
-
-const normalizeRoute = (path: string) => {
-    let normalized = path.replace(import.meta.env.BASE_URL, '');
-    normalized = normalized.startsWith('/') ? normalized.substring(1) : normalized;
-    normalized = normalized.endsWith('/') ? normalized.slice(0, -1) : normalized;
-    return normalized === '' ? '/' : `/${normalized}`;
+if (href.startsWith('#') || href.includes('://')) {
+    // Si es un ANCLAJE (#about) o una URL EXTERNA, se usa directamente sin modificar.
+    finalHref = href;
+} else {
+    // Si es una RUTA INTERNA (/about/), añade el BASE_PATH.
+    finalHref = BASE_PATH + href.substring(1);
 }
 
-// Normaliza las rutas para comparación de "activo"
-const normalizedPathname = normalizeRoute(Astro.url.pathname);
-const normalizedHref = normalizeRoute(href);
+// 3. Lógica para determinar si el enlace está ACTIVO (solo para rutas de archivo)
+// Se obtiene la ruta actual sin el BASE_PATH (ej: /about/)
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, ''); 
 
-// Compara la ruta pasada (ej: /about/) con la ruta actual (ej: /about/)
-const isActive = normalizedHref === normalizedPathname;
+// El enlace está activo si: 
+// a) No es un anclaje (#)
+// b) El pathname actual empieza con el href del enlace (ej: /about/ vs /about/post/1)
+const isActive = href !== '#' && pathname.startsWith(href);
 ---
 
 <a href={finalHref} class:list={[className, { active: isActive }]} {...props} translate="no">
-	<slot />
+    <slot />
 </a>
-
-<style>
-	/* ... (estilos sin cambios) ... */
-</style>
