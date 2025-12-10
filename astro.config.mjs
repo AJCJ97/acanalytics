@@ -4,17 +4,13 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 
 export default defineConfig({
-    // 1. **CLAVE:** El site ahora incluye el subdirectorio del repositorio
-    site: 'https://ajcj97.github.io/acanalytics/', // ¡Añadimos /acanalytics/!
+    site: 'https://ajcj97.github.io/acanalytics/', 
     
-    // 2. ELIMINA O COMENTA LA BASE
-    // base: '/acanalytics', 
-    
+    base: '/acanalytics/',                  
+
     outDir: './dist',
     trailingSlash: 'always',
     output: 'static',
-    
-    // 3. Asegúrate de que no haya configuración conflictiva aquí
     vite: {
         plugins: [tailwindcss()],
     },
