@@ -7,14 +7,18 @@ import react from '@astrojs/react';
 
 export default defineConfig({
   site: 'https://ajcj97.github.io/',
-  base: '/acanalytics',
   outDir: './dist',
   trailingSlash: 'always',
   output: 'static',
 
+  build: {
+        assetsPrefix: 'relative', 
+    },
+  
   vite: {
     plugins: [tailwindcss()],
   },
 
   integrations: [react()],
+  
 });
