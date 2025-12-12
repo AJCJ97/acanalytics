@@ -6,18 +6,29 @@ import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'] & { pubDate?: Date };
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props as Props;---
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props as Props;
 
-<html>
-	<head>
-		<link rel="icon" type="image/png" href="public/logo.png">
-		<link rel="shortcut icon" href="public/logo.png" type="image/x-icon">
-		<link rel="apple-touch-icon" href="public/logo.png">
-		<BaseHead title={title} description={description} />
-	</head>
+// Imagen por defecto si no se define heroImage
+// Cambia esta ruta por la imagen que quieres mostrar en WhatsApp
+const ogImage = heroImage ?? "/assets/logo.png";
+---
 
-	<body>
-		<Header />
-		<Footer />
-	</body>
+<html lang="es">
+  <head>
+    <BaseHead 
+      title={title} 
+      description={description} 
+      image={ogImage} 
+    />
+  </head>
+
+  <body>
+    <Header />
+
+    <main>
+      <slot />  <!-- Para renderizar el contenido de tus páginas -->
+    </main>
+
+    <Footer />
+  </body>
 </html>
