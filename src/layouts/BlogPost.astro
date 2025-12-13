@@ -4,20 +4,25 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 
-type Props = CollectionEntry<'blog'>['data'] & { pubDate?: Date };
+type Props = CollectionEntry<'projects'>['data'] & { pubDate?: Date };
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props as Props;
 
-// Imagen por defecto si no se define heroImage
-// Cambia esta ruta por la imagen que quieres mostrar en WhatsApp
-const ogImage = heroImage ?? "/acanalytics/assets/logo.png";
+// Dominio de GitHub Pages
+const site = "https://ajcj97.github.io/acanalytics";
+
+// Si heroImage existe → convertirlo en URL absoluta
+// Si no existe → asignar tu imagen por defecto también absoluta
+const ogImage = heroImage
+  ? `${site}${heroImage}`
+  : `${site}/assets/logo.png`;
 ---
 
 <html lang="es">
   <head>
     <BaseHead 
-      title={title} 
-      description={description} 
+      title={title}
+      description={description}
       image={ogImage} 
     />
   </head>
@@ -26,7 +31,7 @@ const ogImage = heroImage ?? "/acanalytics/assets/logo.png";
     <Header />
 
     <main>
-      <slot />  <!-- Para renderizar el contenido de tus páginas -->
+      <slot />
     </main>
 
     <Footer />
