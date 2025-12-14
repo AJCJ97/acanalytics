@@ -16,19 +16,15 @@
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px
 		rgba(var(--gray), 33%);
 	scroll-behavior: smooth;
-		
 }
 .dark-mode {
- /* --- MODOS: OSCURO --- */
- --color-text: #f0f0f0; /* Texto claro */
- --color-links: #00f291; /* Mantener el acento vibrante o ajustarlo */
- --color-background: #1e1e1e; /* Fondo de HTML/BODY (el más oscuro) */
- --color-block-bg: #2c3e50; /* Fondo de bloques (Header/Main) */
- 
- /* Ajustar RGB para fondos oscuros */
- --gray-light: 34, 41, 57; /* Usar un color oscuro para elementos claros */
- /* Ajustar el gradiente para modo oscuro (si se usa) */
- --gray-gradient: rgba(30, 30, 30, 1), rgba(30, 30, 30, 0); 
+ --color-text: #f0f0f0; 
+ --color-block-bg: #2c3e50; 
+  background-image: url('../assets/bg-image.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }	
 @font-face {
 	font-family: "Atkinson";
