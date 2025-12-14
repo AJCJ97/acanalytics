@@ -360,6 +360,10 @@ cursor: pointer;
 	color: #e5e5e5;
 	font-weight: 600;
 }
+
+.project-card a:hover {
+	color: #e5e5e5;
+}
 /* Contact me section*/
 .contact-me-links {
 	margin-top: 2rem;
