@@ -350,7 +350,6 @@ cursor: pointer;
 	color: #0950b8;
 }
 
-
 .project-card:hover {
 	border-color: #e5e5e5;
 	transform: translateY(-3px);
@@ -455,7 +454,7 @@ footer {
 	h6,
 	p {
 		margin: 0 0 0.5rem 0;
-		color: var(--color-text) !important;
+		color: var(--color-text);
 		line-height: 1.2;
 	}
 	h1 {
@@ -561,7 +560,17 @@ footer {
 			cursor: pointer;
 			color: var(--black);
 		}
-		
+
+		.project-card:hover {
+			background-color: white;
+		}
+
+		.project-card:hover h3,
+		.project-card:hover p,
+		.project-card:hover a {
+			color: #0950b8;
+			border-color: white;
+		}
 		/* 2. AJUSTES DE DISEÑO PARA MÓVIL */
 		header {
 			padding: 0;
