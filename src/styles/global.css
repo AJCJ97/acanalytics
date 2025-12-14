@@ -174,7 +174,7 @@ h5,
 h6,
 p {
 	margin: 0 0 0.5rem 0;
-	color: var(--color-text) !important;
+	color: var(--color-text);
 	line-height: 1.2;
 }
 h1 {
@@ -273,7 +273,7 @@ cursor: pointer;
 
 .hero p {
 	font-size: 1.2rem;
-	color: #555;
+	color: white;
 	line-height: 1.6;
 	max-width: 700px;
 	margin: auto;
@@ -294,8 +294,8 @@ cursor: pointer;
 }
 
 .primary-btn {
-	border: 2px solid #0d6efd;
-	background: #0d6efd;
+	border: 2px solid #0950b8;
+	background: #0950b8;
 	color: white;
 }
 
@@ -303,15 +303,15 @@ cursor: pointer;
 	background: white;
 }
 .secondary-btn {
-	border: 2px solid #0d6efd;
-	color: #0d6efd;
+	border: 2px solid #0950b8;
+	color: #0950b8;
 	background: white;
 }
 
 .secondary-btn:hover {
-	border: 2px solid #0d6efd;
+	border: 2px solid #0950b8;
 	color: white;
-	background: #0d6efd;
+	background: #0950b8;
 }
 
 .projects-section {
@@ -333,12 +333,23 @@ cursor: pointer;
 }
 
 .project-card {
-	background: #0d6efd;
+	background: #0950b8;
 	padding: 1.5rem;
 	border-radius: 12px;
 	border: 1px solid #e5e5e5;
 	transition: all 0.2s;
 }
+
+.project-card:hover {
+	background-color: white;
+}
+
+.project-card:hover h3,
+.project-card:hover p,
+.project-card:hover a {
+	color: #0950b8;
+}
+
 
 .project-card:hover {
 	border-color: #e5e5e5;
@@ -361,7 +372,7 @@ cursor: pointer;
 	font-weight: 600;
 }
 
-.project-card a:hover {
+.only-text-link{
 	color: #e5e5e5;
 }
 /* Contact me section*/
