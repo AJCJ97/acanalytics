@@ -5,11 +5,6 @@ import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import AboutHeroImage from '../assets/about.jpg';
 import { Image } from 'astro:assets';
-
-import { getI18n } from "../i18n";
-
-const lang = Astro.url.searchParams.get("lang") ?? "en";
-const t = getI18n(lang as "en" | "es");
 ---
 
 <!doctype html>
@@ -28,59 +23,69 @@ const t = getI18n(lang as "en" | "es");
 		<Header />
 		<main>
 			<section class="hero">
-				<h1>{t.hero.title}</h1>
-        		<p>{t.hero.description}</p>
+				<h1>
+					Hi, I'm Alberto
+				</h1>
+				<p>
+					I'm a Data Analyst with a Software Engineering background and 5+ years of experience working with 
+					cross-functional teams across the U.S. and the U.K. I specialize in SQL, Python, Power BI, and Excel, 
+					transforming raw information into insights that support business decisions.
+				</p>
 				<div class="cta-buttons">
-					<a href="#projects" class="primary-btn">{t.hero.cta.projects}</a>
-					<a href="#about" class="primary-btn">{t.hero.cta.about}</a>
-					<a href="CV-Alberto.pdf" download="CV-Alberto.pdf" class="secondary-btn">{t.hero.cta.download}</a>
+					<a href="#projects" class="primary-btn">Projects</a>
+					<a href="#about" class="primary-btn">About Me</a>
+					<a href="CV-Alberto.pdf" download="CV-Alberto.pdf" class="secondary-btn">Download CV</a>
 				</div>
 			</section>
 
 			<section id="projects" class="projects-section">
-				<h2>{t.projects.title}</h2>
+				<h2>Featured Projects</h2>
 
 				<div class="project-grid">
 					<div class="project-card">
-						<h3>{t.projects.gym.title}</h3>
-						<p>{t.projects.gym.description}</p>
-						<a href="/acanalytics/projects/gym-admin/" target="_blank">{t.projects.gym.link}</a>
+						<h3>Gym Admin Database</h3>
+						<p>SQL relational database for multi-location gym operations. Includes schema design, relationships, and queries.</p>
+						<a href="/acanalytics/projects/gym-admin/" target="_blank">View Project →</a>
 					</div>
 
 					<div class="project-card">
-						<h3>{t.projects.python.title}</h3>
-						<p>{t.projects.python.description}</p>
-						<a href="https://gitlab.com/acastro97/random_users_list_generator" target="_blank">{t.projects.python.link}→</a>
+						<h3>Python Database Generator</h3>
+						<p>CSV-to-database generator using Python, pandas, faker and randomization for synthetic datasets.</p>
+						<a href="https://gitlab.com/acastro97/random_users_list_generator" target="_blank">View Project →</a>
 					</div>
 
 					<div class="only-text-link">
-						<a href="/acanalytics/projects/" target="_blank">{t.projects.seeAll}</a>
+						<a href="/acanalytics/projects/" target="_blank">See all</a>
 					</div>
 				</div>
 			</section>
 
 			<section id="about" class="projects-section">
-				<h2>{t.about.title}</h2>
+				<h2>About Me</h2>
 
 				<div class="hero-image-container">
 					<Image alt="" width={300} height={300} loading="eager" src={AboutHeroImage} />
 				</div>
 				<p>
-					{t.about.content}
+					My career began in CRM and email development, where I worked daily with PMs, designers, and engineering teams to solve technical problems, structure projects, and deliver high-impact, data-driven components used by thousands of users.
+					This experience strengthened my analytical thinking, attention to detail, problem-solving mindset, and my ability to work in global, fast-paced environments. <br><br>
+					Transitioning into data has been a natural evolution for me. Today, I work with SQL, Python, Power BI, Excel and build projects focused on data cleaning, visualization, and insights. I enjoy transforming raw information into something clear, usable, and valuable.
+					I'm motivated by learning, building, and contributing to teams that rely on data to drive decisions.<br><br>
+					If you're looking for someone analytical, curious, structured, and committed—I'd love to connect.
 				</p>
 			</section>
 
 			<section id="contact" class="projects-section">
-				<h2>{t.contact.title}</h2>
+				<h2>Let's talk</h2>
 
 				<div class="contact-me-links">
 					<a href="mailto:ajcastro9726@gmail.com" class="primary-btn">
 						<i class="fa-solid fa-envelope"></i> 
-						{t.contact.email}
+						Email
 					</a>
 					<a href="https://www.linkedin.com/in/alberto-jos%C3%A9-castro-jim%C3%A9nez-80718013a/" class="primary-btn">
 						<i class="fab fa-linkedin"></i> 
-    					{t.contact.linkedin}
+    					LinkedIn
 					</a>
 				</div>
 			</section>

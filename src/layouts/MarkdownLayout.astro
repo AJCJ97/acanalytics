@@ -1,0 +1,10 @@
+---
+import SiteLayout from "./SiteLayout.astro";
+const { Content } = Astro.props;
+---
+
+<SiteLayout>
+  <main class="markdown" style="border:5px solid blue;">
+    <Content />
+  </main>
+</SiteLayout>

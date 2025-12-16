@@ -1,80 +1,187 @@
 ---
-title: "Nombre del proyecto"
-description: "Descripción corta del proyecto."
-date: "2024-01-01"
-pubDate: "2024-01-01"
-heroImage: import("./images/blog-placeholder-4.jpg")
+title: Gym Admin Database
+description: Diseño y modelado...
+pubDate: 2024-01-01
 ---
 
 
-# 🏋️‍♂️ Gym Admin Database  
-### _Relational SQL database for multi-location gym operations_
+# 📊 Gym Admin Database  
+## Sistema Relacional SQL para Gestión de Gimnasios
+
+> **Tecnologías:** SQL (PostgreSQL / MySQL)  
+> **Rol:** Data Analyst / Database Designer  
+> **Enfoque:** Modelado relacional, integridad de datos, consultas analíticas  
 
 ---
 
-## 🎯 Objetivo del Proyecto
+## 🧠 Contexto del Proyecto
 
-El propósito de este proyecto es crear una base de datos **escalable**, **bien normalizada** y **fácil de consultar**, que permita administrar las operaciones completas de un gimnasio con varias sucursales.
+Las cadenas de gimnasios manejan grandes volúmenes de información relacionados con **clientes, membresías, pagos, clases, personal y ventas de productos**.  
+Sin una base de datos bien diseñada, estos datos se vuelven difíciles de analizar, inconsistentes y poco confiables para la toma de decisiones.
 
-Incluye módulos para:
-
-- Gestión de miembros  
-- Membresías y pagos  
-- Clases e instructores  
-- Equipos y sucursales  
-- Reportes financieros y operativos  
+Este proyecto aborda ese problema mediante el **diseño completo de una base de datos relacional normalizada**, orientada tanto a la **operación diaria** como al **análisis de datos**.
 
 ---
 
-## 🧩 Características Principales
+## 🎯 Objetivo (SMART)
 
-### ✔️ Multi-sucursal  
-Cada sucursal mantiene miembros, pagos, staff y clases, todo vinculado a una base central.
+### **S – Specific**
+Diseñar una base de datos relacional que permita administrar de forma centralizada:
+- Clientes
+- Membresías
+- Pagos
+- Servicios
+- Productos
+- Personal
+- Clases
+- Sucursales
 
-### ✔️ Gestión de miembros  
-Historial completo, membresías activas, renovación, actividad y estados.
+### **M – Measurable**
+El modelo permite:
+- Calcular ingresos por sucursal
+- Medir gasto por cliente
+- Analizar ventas de productos y servicios
+- Evaluar salarios y costos operativos
+- Generar métricas clave mediante consultas SQL
 
-### ✔️ Gestión de clases  
-Horarios, instructores asignados, cupos, asistencia y reservas.
+### **A – Achievable**
+Se implementa usando **SQL estándar**, compatible con PostgreSQL y MySQL, aplicando:
+- Tercera Forma Normal (3FN)
+- Llaves primarias y foráneas
+- Tablas puente para relaciones N:M
 
-### ✔️ Finanzas  
-Pagos, facturación y reportes automatizados por sucursal o globales.
+### **R – Relevant**
+El proyecto es directamente aplicable a:
+- Analistas de datos
+- Ingenieros de datos
+- Equipos de BI
+- Empresas con modelos de negocio basados en suscripciones
+
+### **T – Time-bound**
+El diseño está pensado para ser **escalable desde el día 1**, permitiendo crecimiento en:
+- Número de clientes
+- Sucursales
+- Transacciones
+- Volumen histórico de datos
 
 ---
 
 ## 🏗️ Arquitectura de la Base de Datos
 
-### **Tablas principales**
+La base de datos fue diseñada siguiendo principios de **modelado relacional clásico**, priorizando:
 
-| Tabla         | Descripción |
-|---------------|-------------|
-| **members**   | Registra miembros y sus datos personales. |
-| **memberships** | Tipos de membresías, duración y precios. |
-| **payments**  | Transacciones e ingresos. |
-| **branches**  | Sucursales del gimnasio. |
-| **staff**     | Entrenadores y personal administrativo. |
-| **classes**   | Clases disponibles y sus horarios. |
-| **attendance** | Registros de asistencia por clase. |
+- 🔒 Integridad de datos  
+- 🔁 Eliminación de redundancia  
+- ⚡ Eficiencia en consultas analíticas  
 
-### **Buenas prácticas utilizadas**
+### 📌 Entidades Principales
 
-- Modelado en 3FN  
-- Llaves primarias y foráneas  
-- Relaciones 1:N y N:M  
-- Integridad referencial  
-- Indexación en columnas críticas  
+| Tabla | Descripción |
+|-----|------------|
+| `client` | Información de clientes |
+| `membership` | Membresías activas |
+| `payment` | Pagos de membresías |
+| `service` | Servicios ofrecidos |
+| `product` | Productos a la venta |
+| `staff` | Personal del gimnasio |
+| `class` | Clases disponibles |
+| `branch` | Sucursales |
+| `city / state / country` | Ubicación geográfica |
+
+### 🔗 Relaciones Clave
+
+- Clientes ↔ Membresías (1:N)
+- Membresías ↔ Pagos (1:N)
+- Clientes ↔ Servicios (N:M)
+- Clientes ↔ Productos (N:M)
+- Staff ↔ Clases (N:M)
+- Sucursales ↔ Staff (1:N)
 
 ---
 
-## 🗂️ Consultas SQL de Ejemplo
+## 🛡️ Principios Técnicos Aplicados
 
-### 💰 Ingresos totales por sucursal
+- **Tercera Forma Normal (3FN)**  
+- **Integridad referencial** mediante llaves foráneas  
+- **Tablas intermedias** para relaciones N:M  
+- **Separación clara entre datos operativos y analíticos**  
+- **Modelo preparado para reporting y BI**
 
-```sql
-SELECT 
-  b.branch_name, 
-  SUM(p.amount) AS total_revenue
-FROM payments p
-JOIN branches b ON p.branch_id = b.id
-GROUP BY b.branch_name
-ORDER BY total_revenue DESC;
+---
+
+## 📈 Casos de Uso Analíticos
+
+El proyecto incluye consultas SQL que permiten responder preguntas reales del negocio.
+
+### 💰 Ingresos por Cliente
+- Total gastado en servicios
+- Total gastado en productos
+- Ingreso total histórico
+
+### 🏢 Rendimiento por Sucursal
+- Ingresos por pagos
+- Ventas de productos
+- Costos asociados a personal
+
+### 👥 Análisis de Personal
+- Salario promedio
+- Distribución de personal por sucursal
+- Asignación de clases
+
+### 📦 Ventas
+- Productos más vendidos
+- Servicios más contratados
+- Frecuencia de compra por cliente
+
+---
+
+## 🧪 Funciones y Consultas Avanzadas
+
+Se desarrollaron funciones SQL reutilizables para:
+
+- Calcular gasto total por cliente
+- Calcular consumo de servicios
+- Obtener métricas agregadas sin duplicar lógica
+- Facilitar análisis recurrentes
+
+Esto permite que **analistas y equipos BI trabajen directamente sobre la base de datos sin lógica adicional en la capa de aplicación**.
+
+---
+
+## 🚀 Valor para el Negocio
+
+✔ Datos consistentes y confiables  
+✔ Base sólida para dashboards y KPIs  
+✔ Facilita análisis históricos  
+✔ Reduce errores operativos  
+✔ Escalable para múltiples sucursales  
+
+---
+
+## 👤 Público Objetivo
+
+- Data Analysts (Junior → Senior)
+- Data Engineers
+- BI Developers
+- Recruiters técnicos
+- Empresas con modelos de suscripción
+
+---
+
+## 📌 Conclusión
+
+Este proyecto demuestra la capacidad de:
+- Traducir necesidades de negocio en un modelo de datos
+- Diseñar bases de datos limpias y escalables
+- Pensar tanto en operación como en análisis
+- Crear soluciones listas para producción y análisis avanzado
+
+Es un **caso realista, completo y aplicable**, ideal para entornos empresariales.
+
+---
+
+📁 **Repositorio incluye:**
+- Scripts SQL
+- Inserts de datos
+- Consultas analíticas
+- Casos de uso reales

@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import "../styles/global.css";
 
 type Props = CollectionEntry<'projects'>['data'] & { pubDate?: Date };
 
@@ -10,6 +11,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props as P
 
 // Dominio de GitHub Pages
 const site = "https://ajcj97.github.io/acanalytics";
+
+import SiteLayout from "./SiteLayout.astro";
+
 
 // Si heroImage existe → convertirlo en URL absoluta
 // Si no existe → asignar tu imagen por defecto también absoluta

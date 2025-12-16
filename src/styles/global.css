@@ -638,3 +638,11 @@ footer {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+/* Markdown Styling */
+
+.markdown {
+	background: #f0f0f0;
+	padding: 3rem;
+	max-width: 900px;
+	margin: auto;
+}
