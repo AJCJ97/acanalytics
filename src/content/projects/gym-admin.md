@@ -4,184 +4,156 @@ description: Diseño y modelado...
 pubDate: 2024-01-01
 ---
 
+## 📊 Gym Admin Database  
 
-# 📊 Gym Admin Database  
-## Sistema Relacional SQL para Gestión de Gimnasios
-
-> **Tecnologías:** SQL (PostgreSQL / MySQL)  
-> **Rol:** Data Analyst / Database Designer  
-> **Enfoque:** Modelado relacional, integridad de datos, consultas analíticas  
+#### Relational SQL Database for Multi-Branch Gym Management
 
 ---
 
-## 🧠 Contexto del Proyecto
+#### 🧠 Project Overview (Business Context)
 
-Las cadenas de gimnasios manejan grandes volúmenes de información relacionados con **clientes, membresías, pagos, clases, personal y ventas de productos**.  
-Sin una base de datos bien diseñada, estos datos se vuelven difíciles de analizar, inconsistentes y poco confiables para la toma de decisiones.
+Managing a gym with multiple locations requires accurate tracking of **members, memberships, payments, staff, classes, and attendance**. Poor data structure leads to inconsistent reporting, duplicated records, and unreliable business insights.
 
-Este proyecto aborda ese problema mediante el **diseño completo de una base de datos relacional normalizada**, orientada tanto a la **operación diaria** como al **análisis de datos**.
+This project presents a **relational SQL database** designed to support both **operational needs** and **analytical use cases**, enabling gym administrators and analysts to make informed, data-driven decisions.
 
----
-
-## 🎯 Objetivo (SMART)
-
-### **S – Specific**
-Diseñar una base de datos relacional que permita administrar de forma centralizada:
-- Clientes
-- Membresías
-- Pagos
-- Servicios
-- Productos
-- Personal
-- Clases
-- Sucursales
-
-### **M – Measurable**
-El modelo permite:
-- Calcular ingresos por sucursal
-- Medir gasto por cliente
-- Analizar ventas de productos y servicios
-- Evaluar salarios y costos operativos
-- Generar métricas clave mediante consultas SQL
-
-### **A – Achievable**
-Se implementa usando **SQL estándar**, compatible con PostgreSQL y MySQL, aplicando:
-- Tercera Forma Normal (3FN)
-- Llaves primarias y foráneas
-- Tablas puente para relaciones N:M
-
-### **R – Relevant**
-El proyecto es directamente aplicable a:
-- Analistas de datos
-- Ingenieros de datos
-- Equipos de BI
-- Empresas con modelos de negocio basados en suscripciones
-
-### **T – Time-bound**
-El diseño está pensado para ser **escalable desde el día 1**, permitiendo crecimiento en:
-- Número de clientes
-- Sucursales
-- Transacciones
-- Volumen histórico de datos
+The solution is built with a strong focus on:
+- **Scalability** (multi-branch support)
+- **Data integrity**
+- **Analytical readiness**
 
 ---
 
-## 🏗️ Arquitectura de la Base de Datos
+#### 🏗️ Database Architecture & Design
 
-La base de datos fue diseñada siguiendo principios de **modelado relacional clásico**, priorizando:
+The database follows **Third Normal Form (3NF)** to minimize redundancy and ensure consistency.
 
-- 🔒 Integridad de datos  
-- 🔁 Eliminación de redundancia  
-- ⚡ Eficiencia en consultas analíticas  
+##### 🔑 Core Tables
 
-### 📌 Entidades Principales
+| Table | Description |
+|------|------------|
+| branches | Gym locations and operational units |
+| members  | Customer personal and contact information |
+| memberships | Active membership plans and validity periods |
+| payments | Financial transactions |
+| staff | Employees and instructors |
+| classes | Classes offered by the gym |
+| attendance | Member participation in classes |
 
-| Tabla | Descripción |
-|-----|------------|
-| `client` | Información de clientes |
-| `membership` | Membresías activas |
-| `payment` | Pagos de membresías |
-| `service` | Servicios ofrecidos |
-| `product` | Productos a la venta |
-| `staff` | Personal del gimnasio |
-| `class` | Clases disponibles |
-| `branch` | Sucursales |
-| `city / state / country` | Ubicación geográfica |
-
-### 🔗 Relaciones Clave
-
-- Clientes ↔ Membresías (1:N)
-- Membresías ↔ Pagos (1:N)
-- Clientes ↔ Servicios (N:M)
-- Clientes ↔ Productos (N:M)
-- Staff ↔ Clases (N:M)
-- Sucursales ↔ Staff (1:N)
+The model supports **one-to-many** and **many-to-many** relationships using junction tables where appropriate.
 
 ---
 
-## 🛡️ Principios Técnicos Aplicados
+#### 🛡️ Data Integrity & Modeling Principles
 
-- **Tercera Forma Normal (3FN)**  
-- **Integridad referencial** mediante llaves foráneas  
-- **Tablas intermedias** para relaciones N:M  
-- **Separación clara entre datos operativos y analíticos**  
-- **Modelo preparado para reporting y BI**
+- Primary and Foreign Keys enforced across all tables  
+- Controlled many-to-many relationships  
+- Clear separation between transactional and descriptive data  
+- Referential integrity guaranteed at database level  
 
----
-
-## 📈 Casos de Uso Analíticos
-
-El proyecto incluye consultas SQL que permiten responder preguntas reales del negocio.
-
-### 💰 Ingresos por Cliente
-- Total gastado en servicios
-- Total gastado en productos
-- Ingreso total histórico
-
-### 🏢 Rendimiento por Sucursal
-- Ingresos por pagos
-- Ventas de productos
-- Costos asociados a personal
-
-### 👥 Análisis de Personal
-- Salario promedio
-- Distribución de personal por sucursal
-- Asignación de clases
-
-### 📦 Ventas
-- Productos más vendidos
-- Servicios más contratados
-- Frecuencia de compra por cliente
+These decisions ensure **reliable analytics** and prevent data anomalies.
 
 ---
 
-## 🧪 Funciones y Consultas Avanzadas
+#### 🧪 Data Population & Simulation
 
-Se desarrollaron funciones SQL reutilizables para:
+The database includes **simulated realistic data** to enable meaningful analysis:
 
-- Calcular gasto total por cliente
-- Calcular consumo de servicios
-- Obtener métricas agregadas sin duplicar lógica
-- Facilitar análisis recurrentes
+- Members distributed across multiple branches  
+- Active and expired memberships  
+- Payment history for revenue analysis  
+- Class schedules and attendance records  
 
-Esto permite que **analistas y equipos BI trabajen directamente sobre la base de datos sin lógica adicional en la capa de aplicación**.
-
----
-
-## 🚀 Valor para el Negocio
-
-✔ Datos consistentes y confiables  
-✔ Base sólida para dashboards y KPIs  
-✔ Facilita análisis históricos  
-✔ Reduce errores operativos  
-✔ Escalable para múltiples sucursales  
+This allows the database to be used as a **real analytical environment**, not just a theoretical schema.
 
 ---
 
-## 👤 Público Objetivo
+#### 📈 Business Questions & Analytical Use Cases
 
-- Data Analysts (Junior → Senior)
-- Data Engineers
-- BI Developers
-- Recruiters técnicos
-- Empresas con modelos de suscripción
+The project includes SQL queries designed to answer common business questions such as:
 
----
+- 💰 Total revenue per branch  
+- 📊 Membership distribution and activity  
+- 🏋️ Class popularity and attendance trends  
+- 👥 Staff allocation and workload  
+- 📅 Time-based revenue and participation analysis  
 
-## 📌 Conclusión
-
-Este proyecto demuestra la capacidad de:
-- Traducir necesidades de negocio en un modelo de datos
-- Diseñar bases de datos limpias y escalables
-- Pensar tanto en operación como en análisis
-- Crear soluciones listas para producción y análisis avanzado
-
-Es un **caso realista, completo y aplicable**, ideal para entornos empresariales.
+These queries demonstrate the ability to translate **business questions into SQL logic**, a key skill for data analysts.
 
 ---
 
-📁 **Repositorio incluye:**
-- Scripts SQL
-- Inserts de datos
-- Consultas analíticas
-- Casos de uso reales
+#### 🧹 Data Maintenance & Reusability
+
+The project includes scripts to:
+
+- Reset and clean the database safely  
+- Truncate tables respecting foreign key dependencies  
+- Enable repeated testing and analysis cycles  
+
+This reflects real-world workflows where databases must be **maintainable and reusable**.
+
+---
+
+#### 🛠️ Technologies Used
+
+- SQL (Relational Databases)
+- Normalized Data Modeling (3NF)
+- Entity Relationship Diagrams (ERD)
+- Analytical SQL Queries
+- Git-based project organization
+
+---
+
+#### 🧠 What This Project Demonstrates
+
+##### Technical Skills
+- Relational database design  
+- SQL querying and joins  
+- Data normalization and integrity  
+- Analytical thinking using structured data  
+
+##### Analytical & Business Thinking
+- Translating business needs into data models  
+- Designing databases for reporting and insights  
+- Structuring data for scalability  
+
+##### Professional Practices
+- Clean project structure  
+- Reproducible database setup  
+- Documentation-oriented mindset  
+
+---
+
+#### 🚀 Potential Improvements & Scalability
+
+Future enhancements could include:
+
+- Index optimization for performance  
+- SQL views for recurring analysis  
+- Integration with BI tools (Power BI, Tableau)  
+- Role-based access simulation  
+- Advanced time-series revenue analysis  
+
+These improvements would move the project closer to a **production-grade analytical system**.
+
+---
+
+#### 🔗 Project Resources
+
+- 📁 **Source Code (GitLab):**  
+  https://gitlab.com/acastro97/gym_bd_admin
+
+- 📊 **Database Schema & ERD:**  
+
+
+![Gym Admin Database ERD](../../assets/ERD.png)
+
+
+--- 
+#### 📌 Final Notes
+
+This project reflects the mindset of a data analyst who:
+- Thinks in systems, not isolated queries  
+- Understands business context  
+- Designs data models with analysis and scalability in mind  
+
+It demonstrates readiness for real-world data environments involving **SQL, analytics, and structured data modeling**.

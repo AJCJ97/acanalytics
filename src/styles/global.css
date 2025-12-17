@@ -641,8 +641,54 @@ footer {
 /* Markdown Styling */
 
 .markdown {
-	background: #f0f0f0;
-	padding: 3rem;
-	max-width: 900px;
-	margin: auto;
+  color: #e5e7eb; /* gris claro */
+}
+
+/* Tables */
+
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+.markdown th {
+  background-color: rgba(255, 255, 255, 0.06);
+  font-weight: 600;
+}
+
+.markdown th,
+.markdown td {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* =========================
+   FIX CRÍTICO: inline code
+   ========================= */
+
+.markdown td code,
+.markdown th code {
+  background-color: rgba(255, 255, 255, 0.08); /* oscuro sutil */
+  color: #f9fafb;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* =========================
+   Code blocks
+   ========================= */
+
+.markdown pre {
+  background-color: #0f172a; /* azul oscuro */
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.markdown pre code {
+  background: none;
+  color: #e5e7eb;
 }
