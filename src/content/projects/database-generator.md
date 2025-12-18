@@ -23,7 +23,7 @@ This project addresses that challenge by providing a **Python-based synthetic us
 The project follows a **step-by-step data generation pipeline**, designed to mirror real analytical workflows:
 
 1. **Data Ingestion**  
-   Multiple CSV files are loaded into memory using `NumPy`, each representing a controlled data domain:
+   Multiple CSV files are loaded into memory using NumPy, each representing a controlled data domain:
    - First names  
    - Last names  
    - Dates (bounded time range)  
@@ -36,7 +36,7 @@ The project follows a **step-by-step data generation pipeline**, designed to mir
    - A fixed schema across all records  
 
 3. **Structured Object Creation**  
-   Each generated user is instantiated as a `Person` object, ensuring that:
+   Each generated user is instantiated as a Person object, ensuring that:
    - All records follow the same structure  
    - Attributes are clearly defined before export  
 
@@ -44,7 +44,7 @@ The project follows a **step-by-step data generation pipeline**, designed to mir
    Individual user objects are aggregated into a list, forming a complete synthetic dataset.
 
 5. **Export for Analysis**  
-   The final dataset is exported using `pandas` into analysis-friendly formats such as:
+   The final dataset is exported using Pandas into analysis-friendly formats such as:
    - CSV  
    - JSON  
 
