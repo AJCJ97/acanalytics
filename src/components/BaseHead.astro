@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
-import FallbackImage from '../assets/logo.png';
+import FallbackImage from '../../public/logo.png';
 import { SITE_TITLE } from '../consts';
 import ThemeScript from './ThemeScript.astro';
 
@@ -54,7 +54,7 @@ const canonicalURL = new URL(Astro.url.pathname, site);
 <meta name="twitter:image" content={ogImage} />
 
 <!-- Assets con BASE -->
-<link rel="icon" href="/src/assets/logo.png" />
+<link rel="icon" href="/logoicon.ico" />
 <link rel="sitemap" href={`${base}sitemap-index.xml`} />
 
 <link

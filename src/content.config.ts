@@ -1,8 +1,6 @@
 // src/content/config.ts
 
 import { defineCollection, z } from 'astro:content';
-// ELIMINA ESTA LÍNEA (import { glob } from 'astro/loaders';) - No es necesaria.
-
 // Renombramos la variable a 'projects' para que sea más clara.
 const projects = defineCollection({
     // El tipo debe ser 'content' para Markdown/MDX
