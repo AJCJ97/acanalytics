@@ -59,6 +59,29 @@ const canonicalURL = new URL(Astro.url.pathname, site);
 <html class="dark">
   <body>
     <slot />
+    <button id="backToTop" aria-label="Back to top">
+      ↑
+    </button>
   </body>
 </html>
 <ThemeScript />
+
+
+<script>
+  const btn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>

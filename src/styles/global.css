@@ -403,6 +403,44 @@ cursor: pointer;
 .contact-me-links a:hover {
 	background-color: white;
 }
+
+#backToTop {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+
+  background: var(--accent, #6366f1);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+
+  z-index: 50;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#backToTop:hover {
+  transform: scale(1.05);
+}
+
 /* Footer CSS clases */
 footer {
 		padding: 2em 1em 6em 1em;
