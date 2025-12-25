@@ -256,6 +256,9 @@ font-size: 1.5rem;
 cursor: pointer;
 }
 
+.justified-text {
+  text-align: justify;
+}
 
 /*Homepage css classes*/
 .hero {
@@ -400,7 +403,6 @@ cursor: pointer;
 .contact-me-links a:hover {
 	background-color: white;
 }
-
 /* Footer CSS clases */
 footer {
 		padding: 2em 1em 6em 1em;

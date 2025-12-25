@@ -1,4 +1,5 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -19,7 +20,7 @@ const base = import.meta.env.BASE_URL;
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
@@ -28,7 +29,7 @@ const base = import.meta.env.BASE_URL;
 				<h1>
 					Hi, I'm Alberto
 				</h1>
-				<p>
+				<p class="justified-text">
 					I'm a Data Analyst with a Software Engineering background and 5+ years of experience working with 
 					cross-functional teams across the U.S. and the U.K. I specialize in SQL, Python, Power BI, and Excel, 
 					transforming raw information into insights that support business decisions.
@@ -46,14 +47,14 @@ const base = import.meta.env.BASE_URL;
 				<div class="project-grid">
 					<div class="project-card">
 						<h3>Gym Admin Database</h3>
-						<p>SQL relational database for multi-location gym operations. Includes schema design, relationships, and queries.</p>
+						<p class="justified-text">SQL relational database for multi-location gym operations. Includes schema design, relationships, and queries.</p>
 						<p>Technologies:<br><br> SQL</p>
 						<a href="/acanalytics/projects/gym-admin/" target="_blank">View Project →</a>
 					</div>
 
 					<div class="project-card">
 						<h3>Python Database Generator</h3>
-						<p>CSV-to-database generator using Python, pandas, faker and randomization for synthetic datasets.</p>
+						<p class="justified-text">CSV-to-database generator using Python, pandas, faker and randomization for synthetic datasets.</p>
 						<p>Technologies:<br><br> Python (Pandas, Numpy)</p>
 						<a href="/acanalytics/projects/database-generator/" target="_blank">View Project →</a>
 					</div>
@@ -70,7 +71,7 @@ const base = import.meta.env.BASE_URL;
 				<div class="hero-image-container">
 					<Image alt="" width={300} height={300} loading="eager" src={AboutHeroImage} />
 				</div>
-				<p>
+				<p class="justified-text">
 					My career began in CRM and email development, where I worked daily with PMs, designers, and engineering teams to solve technical problems, structure projects, and deliver high-impact, data-driven components used by thousands of users.
 					This experience strengthened my analytical thinking, attention to detail, problem-solving mindset, and my ability to work in global, fast-paced environments. <br><br>
 					Transitioning into data has been a natural evolution for me. Today, I work with SQL, Python, Power BI, Excel and build projects focused on data cleaning, visualization, and insights. I enjoy transforming raw information into something clear, usable, and valuable.
