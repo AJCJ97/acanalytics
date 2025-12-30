@@ -486,6 +486,15 @@ footer {
 	}
 
 @media (max-width: 720px) {
+	.dark-mode {
+	--color-text: #f0f0f0; 
+	--color-block-bg: #2c3e50; 
+	background-image: url('../assets/bg-image.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: scroll;
+	}	
 	body {
 		font-family: "Atkinson", sans-serif;
 		margin: 0;
