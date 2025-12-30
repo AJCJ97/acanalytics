@@ -78,7 +78,7 @@ const canonicalURL = new URL(Astro.url.pathname, site);
   const btn = document.getElementById("backToTop");
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 100) {
       btn.classList.add("show");
     } else {
       btn.classList.remove("show");
