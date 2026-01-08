@@ -92,6 +92,11 @@ The results (shown below) are ordered by total revenue in descending order, maki
 ![Gym Admin Database Case#1Output](../../assets/case_1.png)
 
 
+
+##### 🔹Conclusions
+
+-  The revenue analysis reveals that service type <strong>Physiotherapy Session</strong> is the top revenue generator. Prioritizing this category could increase operational focus and inform marketing or pricing strategies.
+
 ---
 
 #### 🔗 Project Resources
