@@ -49,13 +49,23 @@ Design and implement a **normalized relational database** that supports operatio
 
 ##### 🔹 Business Question
 
+<br>
+
 ##### Case #1
+
+<br>
 
 **Which service type generates the highest total revenue?**
 
 <p>The objective of this analysis is to identify which type of service contributes the most to overall revenue, based on historical payment transactions. This insight helps the business understand which services drive financial performance and where to focus strategic efforts.</p>
 
 ##### 🔹 Analytical Approach
+
+<br>
+
+##### Case #1
+
+<br>
 
 <p>To answer this question, transactional data from the servicePayment table was combined with multiple dimension tables to enrich the analysis:</p>
 
@@ -84,6 +94,11 @@ WITH SALES_SUMMARY AS (
 </code></pre>
 
 ##### 🔹 Key Findings
+<br>
+
+##### Case #1
+
+<br>
 <p>The analysis aggregates total revenue and number of payments by service type.  
 By grouping transactions at the service level and summing total payment amounts, we can clearly identify which service type generates the highest total revenue and how frequently it is purchased.
 
