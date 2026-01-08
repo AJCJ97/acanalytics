@@ -485,6 +485,13 @@ footer {
 		color: rgb(var(--gray-dark));
 	}
 
+	.code-block {
+		background-color: rgb(var(--gray-dark));
+		font-size: 0.85rem; /* ↓ más pequeño */
+		line-height: 1.4;
+		overflow-x: auto;
+	}
+
 @media (max-width: 720px) {
 	.dark-mode {
 	--color-text: #f0f0f0; 
