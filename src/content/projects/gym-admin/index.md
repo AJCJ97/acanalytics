@@ -104,7 +104,7 @@ By grouping transactions at the service level and summing total payment amounts,
 
 The results (shown below) are ordered by total revenue in descending order, making the top-performing services immediately visible.</p>
 
-![Gym Admin Database Case#1Output](../../assets/case_1.png)
+![Gym Admin Database Case#1Output](../gym-admin/evidences/case_1.png)
 
 
 
@@ -122,4 +122,4 @@ The results (shown below) are ordered by total revenue in descending order, maki
 - 📊 **Database Schema & ERD:**  
 
 
-![Gym Admin Database ERD](../../assets/ERD.png)
+![Gym Admin Database ERD](../gym-admin/evidences/ERD.png)
