@@ -118,11 +118,4 @@ This ensured that the data consumed by Power BI was already **clean, structured,
 * Services offer a **more balanced and sustainable revenue model**.
 * A combined strategy of high‑value products and recurring services is key to long‑term stability.
 
----
-
-## 🛠 Tools & Skills Demonstrated
-
-* **SQL:** JOINs, aggregations, CTEs
-* **Power BI:** Data modeling, KPIs, bar charts, revenue distributions
-* **Business Analysis:** Translating data into insights and recommendations
 
