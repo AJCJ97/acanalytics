@@ -4,7 +4,7 @@ description: Revenue Analysis & Business Insights using Power BI
 pubDate: 2026-01-19
 ---
 
-## 📊 Gym Admin BI Project – Revenue Analysis & Insights
+### 📊 Gym Admin BI Project – Revenue Analysis & Insights
 
 **Project Type:** Business Intelligence & Data Visualization  
 **Role:** Data Analyst  
