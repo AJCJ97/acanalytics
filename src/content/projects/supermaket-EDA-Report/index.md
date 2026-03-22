@@ -1,7 +1,7 @@
 ---
 title: Supermarket EDA Report
 description: COMING SOON
-pubDate: TBD
+pubDate: 2026-03-21
 ---
 
 ### 📊 Supermarket EDA Report
