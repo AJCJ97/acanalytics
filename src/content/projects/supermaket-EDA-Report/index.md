@@ -1,12 +1,12 @@
 ---
 title: Supermarket EDA Report
-description: 
-pubDate: 2026-03-21
+description: COMING SOON
+pubDate: TBD
 ---
 
 ### 📊 Supermarket EDA Report
 
-**Project Type:** TBC
+**Project Type:** TBD
 **Role:** Data Analyst  
 **Tools:** Python (Pandas, Matplotlib)
 **Context:** Personal Project – EDA
