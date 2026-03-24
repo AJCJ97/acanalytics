@@ -9,6 +9,6 @@ pubDate: 2026-03-21
     <h2>🚧 Coming Soon 🚧</h2>
     <p>In the meantime, discover my other data projects:</p>
     <a href="/acanalytics/projects/" style="margin-top: 2rem; padding: 0.75rem 1.5rem; background-color: #0950b8; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; transition: background-color 0.3s;">
-        &larr; Back to Portfolio
+        ⇦ Back to Portfolio
     </a>
 </div>
