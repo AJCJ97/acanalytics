@@ -1,3 +1,8 @@
+---
+title: Supermarket Sales EDA
+description: Exploratory Data Analysis for Sales Trends and Anomalies
+pubDate: 2026-03-23
+---
 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50vh; text-align: center; padding: 2rem;">
     <h2>🚧 Coming Soon 🚧</h2>
     <p>In the meantime, discover my other data projects:</p>
