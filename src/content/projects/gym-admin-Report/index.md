@@ -70,7 +70,7 @@ This ensured that the data consumed by Power BI was already **clean, structured,
 
 ## 📈 Dashboard 2 – Services Revenue Analysis
 
-![Services Revenue Dashboard](../gym-admin-Report/evidences/ProductSales.png)
+![Services Revenue Dashboard](../gym-admin-Report/evidences/ServicesIncomes.png)
 
 ### 🔎 Key Insights
 
