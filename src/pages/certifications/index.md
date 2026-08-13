@@ -1,3 +1,9 @@
+---
+import BackToHome from "../../components/BackToHome.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+---
+
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<BackToHome/>
 	<section class="projects-section">
