@@ -23,15 +23,15 @@ Build and deploy an automated **End-to-End (E2E)** data pipeline that extracts G
 ---
 
 #### 🛠️ Tools Used
-- **Python:** `requests`, `pandas`, `pyodbc` (REST API Data Ingestion & ETL)
-- **SQL Server:** T-SQL, Relational Data Modeling, Views (`vw_fact_gdp_latam`)
-- **Power BI & DAX:** Dynamic Ranking Engine (`RANKX`, `ALL`, `ALLSELECTED`), Data Storytelling, Semantic Gradient Formatting
+- **Python:** requests, pandas, pyodbc (REST API Data Ingestion & ETL)
+- **SQL Server:** T-SQL, Relational Data Modeling, Views (vw_fact_gdp_latam)
+- **Power BI :** DAX 
 
 ---
 
 #### 🗂️ Pipeline Architecture & Design
-- **Ingestion Layer (Python):** Automated extraction of GDP growth percentage (`NY.GDP.MKTP.KD.ZG`) and Nominal GDP from the World Bank REST API using 3-letter ISO country codes (`BRA`, `MEX`, `CRI`, `NIC`, `BOL`, `URY`, etc.).
-- **Storage & Transformation (SQL Server):** Centralized relational database staging fact data and delivering a clean analytical view (`vw_fact_gdp_latam`) to offload heavy calculations from the BI front-end.
+- **Ingestion Layer (Python):** Automated extraction of GDP growth percentage (NY.GDP.MKTP.KD.ZG) and Nominal GDP from the World Bank REST API using 3-letter ISO country codes (BRA, MEX, CRI, NIC, BOL, URY, etc.).
+- **Storage & Transformation (SQL Server):** Centralized relational database staging fact data and delivering a clean analytical view (vw_fact_gdp_latam) to offload heavy calculations from the BI front-end.
 - **Semantic & Presentation Layer (Power BI):** Discoupled DAX measures computing real-time rankings, top/bottom performers, regional averages, and dynamic UI labels without visual filter distortion.
 
 ---
