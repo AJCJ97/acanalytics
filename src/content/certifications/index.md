@@ -1,7 +1,7 @@
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<BackToHome/>
 	<section class="projects-section">
-		  <h2>📜 Certifications & Learning</h2>
+	<h2>📜 Certifications & Learning</h2>
 
   <p>
     All certifications listed below are publicly verifiable.
