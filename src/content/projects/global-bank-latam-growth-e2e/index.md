@@ -171,7 +171,8 @@ RETURN
 
 #### 🔗 Project Resources
 
-- 📁 **Source Code & Scripts (GitHub):**  
-  https://github.com/acastro97/latam_gdp_pipeline
+- 📁 **Source Code & Scripts (GitLab):**  
+  https://gitlab.com/acastro97/automated-api-data-pipeline-business-intelligence-dashboard
 
 - 📊 **Architecture & Pipeline Diagram:**  
+![Architecture & Pipeline Diagram](../global-bank-latam-growth-e2e/evidences/graph.png)
