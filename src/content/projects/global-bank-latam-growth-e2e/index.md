@@ -65,7 +65,7 @@ Build and deploy an automated **End-to-End (E2E)** data pipeline that extracts G
 
 <br>
 
-<p>Data ingested via Python into SQL Server was exposed through the analytical view <code>vw_fact_gdp_latam</code>. In Power BI, DAX measures were constructed using <code>RANKX</code> combined with <code>ALL</code> and <code>ALLSELECTED</code> to compute accurate regional rankings without being distorted by local visual filters.</p>
+<p>Data ingested via Python into SQL Server was exposed through the analytical view vw_fact_gdp_latam. In Power BI, DAX measures were constructed using RANKX combined with ALL and ALLSELECTED to compute accurate regional rankings without being distorted by local visual filters.</p>
 
 <pre class="code-block"><code class="language-sql">
 -- SQL Server Analytical View Layer
@@ -137,7 +137,7 @@ RANKX(
 
 <br>
 
-<p>Nominal GDP values were aggregated to calculate the total cumulative regional GDP ($27.82T). Custom DAX formatting measures were engineered using string concatenation, scale reduction (Trillions/Billions), and line breaks (<code>UNICHAR(10)</code>) to produce clean executive KPI cards.</p>
+<p>Nominal GDP values were aggregated to calculate the total cumulative regional GDP ($27.82T). Custom DAX formatting measures were engineered using string concatenation, scale reduction (Trillions/Billions), and line breaks (UNICHAR(10)) to produce clean executive KPI cards.</p>
 
 <pre class="code-block"><code class="language-dax">
 // DAX: Lowest GDP Country Card Label with Scaling & Line Break
