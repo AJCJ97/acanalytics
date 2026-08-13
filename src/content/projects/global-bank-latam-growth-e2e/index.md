@@ -175,4 +175,15 @@ RETURN
   https://github.com/acastro97/latam_gdp_pipeline
 
 - 📊 **Architecture & Pipeline Diagram:**  
-  ![LATAM Pipeline Architecture]()
+  ```mermaid
+graph LR
+    A[World Bank REST API] -->|JSON Requests| B[Python ETL Script]
+    B -->|Pandas & Pyodbc| C[(SQL Server DB)]
+    C -->|View: vw_fact_gdp_latam| D[Power BI Model]
+    D -->|DAX Engine & UI| E[Executive Dashboard]
+
+    style A fill:#0072CE,stroke:#333,stroke-width:1px,color:#fff
+    style B fill:#3776AB,stroke:#333,stroke-width:1px,color:#fff
+    style C fill:#CC292B,stroke:#333,stroke-width:1px,color:#fff
+    style D fill:#F2C811,stroke:#333,stroke-width:1px,color:#000
+    style E fill:#2ECC71,stroke:#333,stroke-width:1px,color:#fff
