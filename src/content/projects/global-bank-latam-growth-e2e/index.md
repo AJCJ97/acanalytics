@@ -113,7 +113,7 @@ RANKX(
 
 - **Leader:** **Nicaragua** achieved the highest growth rate (**19.78%**), taking the **#1** ranking position.
 - **Regional Benchmark:** The global growth average across Latin America stands at **12.28%**.
-- **Rezagado:** **Bolivia** recorded the lowest growth rate (**2.45%**), occupying ranking **#18**.
+- **Lowest:** **Bolivia** recorded the lowest growth rate (**2.45%**), occupying ranking **#18**.
 
 ---
 
