@@ -107,7 +107,7 @@ RANKX(
 
 <p>The Treemap visualizes the 18 economies organized by area and colored via a semantic gradient (green for high expansion, yellow for average, red for lagging). The bottom cards highlight the regional extremities against the LATAM average (12.28%).</p>
 
-![LATAM Global Growth Treemap]()
+![LATAM Global Growth Treemap](../global-bank-latam-growth-e2e/evidences/percentage.png)
 
 ##### 🔹 Conclusions
 
@@ -159,7 +159,7 @@ RETURN
 
 <p>A sorted bar chart illustrates total GDP distribution alongside three centralized KPI cards displaying the market leader, total regional GDP, and smallest economy.</p>
 
-![LATAM Nominal GDP Distribution]()
+![LATAM Nominal GDP Distribution](../global-bank-latam-growth-e2e/evidences/nominal.png)
 
 ##### 🔹 Conclusions
 
@@ -175,15 +175,3 @@ RETURN
   https://github.com/acastro97/latam_gdp_pipeline
 
 - 📊 **Architecture & Pipeline Diagram:**  
-  ```mermaid
-graph LR
-    A[World Bank REST API] -->|JSON Requests| B[Python ETL Script]
-    B -->|Pandas & Pyodbc| C[(SQL Server DB)]
-    C -->|View: vw_fact_gdp_latam| D[Power BI Model]
-    D -->|DAX Engine & UI| E[Executive Dashboard]
-
-    style A fill:#0072CE,stroke:#333,stroke-width:1px,color:#fff
-    style B fill:#3776AB,stroke:#333,stroke-width:1px,color:#fff
-    style C fill:#CC292B,stroke:#333,stroke-width:1px,color:#fff
-    style D fill:#F2C811,stroke:#333,stroke-width:1px,color:#000
-    style E fill:#2ECC71,stroke:#333,stroke-width:1px,color:#fff
