@@ -107,7 +107,7 @@ RANKX(
 
 <p>The Treemap visualizes the 18 economies organized by area and colored via a semantic gradient (green for high expansion, yellow for average, red for lagging). The bottom cards highlight the regional extremities against the LATAM average (12.28%).</p>
 
-![LATAM Global Growth Treemap](../latam-gdp/evidences/case_1_treemap.png)
+![LATAM Global Growth Treemap]()
 
 ##### 🔹 Conclusions
 
@@ -159,7 +159,7 @@ RETURN
 
 <p>A sorted bar chart illustrates total GDP distribution alongside three centralized KPI cards displaying the market leader, total regional GDP, and smallest economy.</p>
 
-![LATAM Nominal GDP Distribution](../latam-gdp/evidences/case_2_nominal_gdp.png)
+![LATAM Nominal GDP Distribution]()
 
 ##### 🔹 Conclusions
 
@@ -175,4 +175,4 @@ RETURN
   https://github.com/acastro97/latam_gdp_pipeline
 
 - 📊 **Architecture & Pipeline Diagram:**  
-  ![LATAM Pipeline Architecture](../latam-gdp/evidences/pipeline_architecture.png)
+  ![LATAM Pipeline Architecture]()
