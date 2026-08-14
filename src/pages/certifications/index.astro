@@ -1,0 +1,14 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro'; // Ajusta según tu estructura de Layouts
+
+const certEntry = await getEntry('certifications', 'index'); // o 'certifications' según el nombre del archivo
+const { Content } = await certEntry.render();
+---
+
+<BaseLayout title={certEntry.data.title} description={certEntry.data.description}>
+  <main class="max-w-4xl mx-auto px-4 py-8 prose dark:prose-invert">
+    <h1>{certEntry.data.title}</h1>
+    <Content />
+  </main>
+</BaseLayout>
