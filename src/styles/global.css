@@ -698,21 +698,6 @@ footer {
 	.social-links a:hover {
 		color: rgb(var(--gray-dark));
 	}
-	/* Permite desplazamiento horizontal en todas las tablas Markdown */
-table {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-}
-
-th, td {
-  padding: 0.6rem 1rem;
-  /* Evita que el texto de las celdas se rompa verticalmente en letras/palabras sueltas */
-  white-space: nowrap; 
-}
 }
 
 .sr-only {
