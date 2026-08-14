@@ -492,6 +492,51 @@ footer {
 		overflow-x: auto;
 	}
 
+/*Certifications*/
+
+/* Contenedor principal sin restricciones estrechas */
+  .certifications-page {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .certifications-content {
+    width: 100%;
+  }
+
+  /* Estilos de lista limpia responsiva */
+  .cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .cert-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* o #eee si es light theme */
+  }
+
+  .cert-list li span:first-child {
+    font-weight: 500;
+  }
+
+  .cert-id, .institution {
+    opacity: 0.7;
+    font-size: 0.9em;
+  }
+
+  hr {
+    margin: 2rem 0;
+    opacity: 0.2;
+  }
+
 @media (max-width: 720px) {
 	.dark-mode {
 	--color-text: #f0f0f0; 
@@ -698,6 +743,23 @@ footer {
 	.social-links a:hover {
 		color: rgb(var(--gray-dark));
 	}
+
+	/*Certifications*/
+	  .certifications-page {
+      padding: 0.75rem;
+    }
+
+    /* En móvil, apila el título del curso y el link de verificación verticalmente */
+    .cert-list li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3rem;
+      padding: 0.85rem 0;
+    }
+
+    .cert-list li a, .cert-id, .institution {
+      font-size: 0.85rem;
+    }
 }
 
 .sr-only {
